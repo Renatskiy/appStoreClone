@@ -9,6 +9,7 @@ import UIKit
 
 class GamePageController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    //регистрируем id ячейки
     let cellID = "gameID"
     let headerId = "gameHeaderId"
     

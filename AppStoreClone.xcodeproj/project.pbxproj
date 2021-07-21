@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47B507A626A865E1006C1914 /* GameHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B507A526A865E1006C1914 /* GameHorizontalCell.swift */; };
+		47B507A826A865FC006C1914 /* GameHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B507A726A865FC006C1914 /* GameHorizontalController.swift */; };
 		47C7633E2695ED1400F9CAA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7633D2695ED1400F9CAA6 /* AppDelegate.swift */; };
 		47C763402695ED1400F9CAA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7633F2695ED1400F9CAA6 /* SceneDelegate.swift */; };
 		47C763472695ED1800F9CAA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47C763462695ED1800F9CAA6 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47B507A526A865E1006C1914 /* GameHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHorizontalCell.swift; sourceTree = "<group>"; };
+		47B507A726A865FC006C1914 /* GameHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHorizontalController.swift; sourceTree = "<group>"; };
 		47C7633A2695ED1400F9CAA6 /* AppStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C7633D2695ED1400F9CAA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47C7633F2695ED1400F9CAA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47B507A126A86322006C1914 /* Game Header */ = {
+			isa = PBXGroup;
+			children = (
+				47B507A726A865FC006C1914 /* GameHorizontalController.swift */,
+			);
+			path = "Game Header";
+			sourceTree = "<group>";
+		};
+		47B507A226A86332006C1914 /* Game Header */ = {
+			isa = PBXGroup;
+			children = (
+				47B507A526A865E1006C1914 /* GameHorizontalCell.swift */,
+			);
+			path = "Game Header";
+			sourceTree = "<group>";
+		};
 		47C763312695ED1400F9CAA6 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +95,7 @@
 		47C763512695EDBA00F9CAA6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				47B507A126A86322006C1914 /* Game Header */,
 				47C763542695F0DF00F9CAA6 /* BaseTabBarController.swift */,
 				47C763562695F55700F9CAA6 /* GamePageController.swift */,
 			);
@@ -91,6 +112,7 @@
 		47C763532695EDD300F9CAA6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				47B507A226A86332006C1914 /* Game Header */,
 				47C763582695FA4A00F9CAA6 /* GamePageCell.swift */,
 				47C7635C26A0806C00F9CAA6 /* GameHeaderCell.swift */,
 			);
@@ -172,6 +194,8 @@
 				47C7633E2695ED1400F9CAA6 /* AppDelegate.swift in Sources */,
 				47C763592695FA4A00F9CAA6 /* GamePageCell.swift in Sources */,
 				47C763402695ED1400F9CAA6 /* SceneDelegate.swift in Sources */,
+				47B507A626A865E1006C1914 /* GameHorizontalCell.swift in Sources */,
+				47B507A826A865FC006C1914 /* GameHorizontalController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
