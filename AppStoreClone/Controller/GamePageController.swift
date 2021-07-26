@@ -12,12 +12,14 @@ class GamePageController: UICollectionViewController, UICollectionViewDelegateFl
     //регистрируем id ячейки
     let cellID = "gameID"
     let headerId = "gameHeaderId"
-    
+//    let gameListId = "gameListId"
     
     
     override func viewDidLoad() {
         collectionView.backgroundColor = .orange
         collectionView.register(GamePageCell.self, forCellWithReuseIdentifier: cellID)
+        
+//        collectionView.register(GameListCell.self, forCellWithReuseIdentifier: gameListId)
         
         collectionView.register(GameHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
     }
@@ -36,7 +38,7 @@ class GamePageController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

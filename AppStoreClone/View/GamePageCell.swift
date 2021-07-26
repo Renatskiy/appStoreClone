@@ -9,8 +9,22 @@ import UIKit
 
 class GamePageCell: UICollectionViewCell {
     
+    let gameList = GameListController()
+    
+    private func setupUI(){
+        addSubview(gameList.view)
+        gameList.view.translatesAutoresizingMaskIntoConstraints = false
+//
+        gameList.view.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        gameList.view.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        gameList.view.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        gameList.view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
         backgroundColor = .purple
     }
     

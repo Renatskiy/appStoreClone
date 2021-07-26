@@ -8,7 +8,7 @@
 import UIKit
 
 
-class GameHorizontalCell: UICollectionViewCell {
+class GameListCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -18,7 +18,7 @@ class GameHorizontalCell: UICollectionViewCell {
     
     let image:UIImageView = {
         let iv = UIImageView()
-       iv.image = UIImage(named: "new_york")
+//       iv.image = UIImage(named: "new_york")
 
        iv.layer.cornerRadius = 6
        iv.clipsToBounds = true
@@ -34,7 +34,7 @@ class GameHorizontalCell: UICollectionViewCell {
     //        i.backgroundColor = UIColor.white
             i.textColor = UIColor.black
         i.font = .systemFont(ofSize: 16, weight: .bold)
-            i.text = "Лондон из э кэпитал оф Грейт Британ"
+            i.text = "Заголовок"
             i.numberOfLines = 0
             i.translatesAutoresizingMaskIntoConstraints = false
     
@@ -50,7 +50,7 @@ class GameHorizontalCell: UICollectionViewCell {
     //        i.backgroundColor = UIColor.white
             i.textColor = UIColor.black
             i.font = .systemFont(ofSize: 14, weight: .regular)
-            i.text = "зис ис тру"
+            i.text = "Подзаголовок"
             i.numberOfLines = 0
             i.translatesAutoresizingMaskIntoConstraints = false
     

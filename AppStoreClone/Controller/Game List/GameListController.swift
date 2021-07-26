@@ -1,5 +1,5 @@
 //
-//  GameHorizontalController.swift
+//  GameListController.swift
 //  AppStoreClone
 //
 //  Created by Ренат Ахметгареев on 21.07.2021.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class GameHorizontalController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class GameListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let sliderId = "sliderId"
     
     override func viewDidLoad() {
         collectionView.backgroundColor = .orange
-        collectionView.register(GameHorizontalCell.self, forCellWithReuseIdentifier: sliderId)
+        collectionView.register(GameListCell.self, forCellWithReuseIdentifier: sliderId)
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
             layout.scrollDirection = .horizontal
@@ -28,7 +28,7 @@ class GameHorizontalController: UICollectionViewController, UICollectionViewDele
         return .init(width: view.frame.width - 32, height: 300)
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sliderId, for: indexPath) as! GameHorizontalCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sliderId, for: indexPath) as! GameListCell
         
        
         return cell
