@@ -7,11 +7,15 @@
 
 
 import UIKit
+import SDWebImage
 
 class GameListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+   
     let sliderId = "sliderId"
     let topBottomPadding: CGFloat = 12
     let lineSpacing: CGFloat = 10
+    
+    var games: Games?
     
     override func viewDidLoad() {
         collectionView.backgroundColor = .white
@@ -23,7 +27,7 @@ class GameListController: UICollectionViewController, UICollectionViewDelegateFl
         
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return games?.feed.results.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -32,9 +36,15 @@ class GameListController: UICollectionViewController, UICollectionViewDelegateFl
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sliderId, for: indexPath) as! GameListCell
-        cell.nameLabel.text = "Some Name"
-        cell.companyLabel.text = "Some Label"
-        cell.imageView.image = UIImage(named: "ios_game_1")
+        
+        let game = games?.feed.results[indexPath.item]
+        
+        
+        cell.nameLabel.text = game?.artistName
+        cell.companyLabel.text = game?.name
+        
+        
+        cell.imageView.sd_setImage(with: URL(string: game!.artworkUrl100), placeholderImage: UIImage(named: "App-Default"))
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
