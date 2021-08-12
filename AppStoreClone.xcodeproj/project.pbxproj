@@ -16,6 +16,7 @@
 		47B507BD26B2EEBD006C1914 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B507BC26B2EEBD006C1914 /* Service.swift */; };
 		47B507BF26B2F000006C1914 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B507BE26B2F000006C1914 /* Games.swift */; };
 		47B507C226B2F9A2006C1914 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 47B507C126B2F9A2006C1914 /* SDWebImage */; };
+		47C014D726BD77930036941D /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C014D626BD77930036941D /* GameDetailViewController.swift */; };
 		47C7633E2695ED1400F9CAA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7633D2695ED1400F9CAA6 /* AppDelegate.swift */; };
 		47C763402695ED1400F9CAA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7633F2695ED1400F9CAA6 /* SceneDelegate.swift */; };
 		47C763472695ED1800F9CAA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47C763462695ED1800F9CAA6 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		47B507B926B1A261006C1914 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		47B507BC26B2EEBD006C1914 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		47B507BE26B2F000006C1914 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Games.swift; path = AppStoreClone/Service/Games.swift; sourceTree = SOURCE_ROOT; };
+		47C014D626BD77930036941D /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		47C7633A2695ED1400F9CAA6 /* AppStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C7633D2695ED1400F9CAA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47C7633F2695ED1400F9CAA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		47C014D526BD77620036941D /* Game Details */ = {
+			isa = PBXGroup;
+			children = (
+				47C014D626BD77930036941D /* GameDetailViewController.swift */,
+			);
+			path = "Game Details";
+			sourceTree = "<group>";
+		};
 		47C763312695ED1400F9CAA6 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +162,7 @@
 		47C763512695EDBA00F9CAA6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				47C014D526BD77620036941D /* Game Details */,
 				47B507A926A9B301006C1914 /* Game List */,
 				47B507A126A86322006C1914 /* Game Header */,
 				47C763542695F0DF00F9CAA6 /* BaseTabBarController.swift */,
@@ -255,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B507AB26A9B324006C1914 /* GameListController.swift in Sources */,
+				47C014D726BD77930036941D /* GameDetailViewController.swift in Sources */,
 				47B507BD26B2EEBD006C1914 /* Service.swift in Sources */,
 				47C763552695F0DF00F9CAA6 /* BaseTabBarController.swift in Sources */,
 				47B507BF26B2F000006C1914 /* Games.swift in Sources */,

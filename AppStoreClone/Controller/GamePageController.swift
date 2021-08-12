@@ -33,13 +33,18 @@ class GamePageController: UICollectionViewController, UICollectionViewDelegateFl
             
             guard let self = self else { return }
             switch result {
-            case .success(let requesGames):
-                self.updateGames(requestGames: requesGames)
+            case .success(let requestGames):
+                self.updateGames(requestGames: requestGames)
             case .failure(let requestError):
-                print("We got some error", requestError.localizedDescription)
+                DispatchQueue.main.async {
+                    self.presentErrorAlert(message: requestError.localizedDescription)
+                }
             }
         }
     }
+    
+    //функция апдейта после получения респонса
+    
     private func updateGames(requestGames: Games){
         games = requestGames
         DispatchQueue.main.async {
@@ -47,6 +52,16 @@ class GamePageController: UICollectionViewController, UICollectionViewDelegateFl
         }
         
     }
+    
+    private func presentErrorAlert(message: String) {
+
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Закрыть", style: .destructive, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+    
     
     //MARK: -header
     
@@ -72,12 +87,28 @@ class GamePageController: UICollectionViewController, UICollectionViewDelegateFl
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! GamePageCell
         
+        
         cell.gameList.games = games
+        
+        cell.gameList.didselectHandler = {[ weak self ] game in
+            let gameDetail = GameDetailViewController()
+            gameDetail.navigationItem.title = game.artistName
+            self?.navigationController?.pushViewController(gameDetail, animated: true)
+        }
+        
+        
+        
+        
+        
         
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 16, left: 0, bottom: 0, right: 0)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("tapped")
     }
     
     init() {

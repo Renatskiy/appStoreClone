@@ -8,11 +8,28 @@
 import Foundation
 
 enum RequestError: Error {
+    //добавить самописные ошибки
     case noData
-    case noNetwork
-    case decodingError
+    case noNetwork(message: String)
+    case decodingError(message: Int)
     case backendError
 }
+
+extension RequestError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .noData:
+            return "No data"
+        case .noNetwork(message: let message):
+            return "Возникла ошибка с сетью \(message)"
+        case .backendError:
+            return "backend error"
+        case .decodingError(message: let message):
+            return "decoding error \(message)"
+        }
+    }
+}
+
 
 class Service {
     static let shared = Service()
@@ -21,8 +38,8 @@ class Service {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
              
-            if error != nil {
-                completionHandler(.failure(.noNetwork))
+            if let error = error {
+                completionHandler(.failure(.noNetwork(message: error.localizedDescription)))
                 return}
             
             guard let httpResponse = response as? HTTPURLResponse,
@@ -37,7 +54,7 @@ class Service {
             if let games = try? JSONDecoder().decode(Games.self, from: data){
                 completionHandler(.success(games))
             }else{
-                completionHandler(.failure(.decodingError))
+                completionHandler(.failure(.decodingError(message: httpResponse.statusCode)))
             }
         }
         task.resume()

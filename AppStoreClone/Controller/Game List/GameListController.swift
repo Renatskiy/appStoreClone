@@ -17,6 +17,8 @@ class GameListController: UICollectionViewController, UICollectionViewDelegateFl
     
     var games: Games?
     
+    var didselectHandler: ((FeedResult) -> ())?
+    
     override func viewDidLoad() {
         collectionView.backgroundColor = .white
         collectionView.register(GameListCell.self, forCellWithReuseIdentifier: sliderId)
@@ -49,6 +51,13 @@ class GameListController: UICollectionViewController, UICollectionViewDelegateFl
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: topBottomPadding, left: 16, bottom: topBottomPadding, right: 16)
+    }
+    
+    //по нажатию возвращает айтем
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let game = games?.feed.results[indexPath.item]{
+            didselectHandler?(game)
+        }
     }
     
     init() {

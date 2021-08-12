@@ -15,6 +15,7 @@ class GamePageCell: UICollectionViewCell {
         addSubview(gameList.view)
         gameList.view.translatesAutoresizingMaskIntoConstraints = false
 //
+//        gameList.view.heightAnchor.constraint(equalToConstant: 600).isActive = true
         gameList.view.topAnchor.constraint(equalTo: topAnchor).isActive = true
         gameList.view.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         gameList.view.rightAnchor.constraint(equalTo: rightAnchor).isActive = true

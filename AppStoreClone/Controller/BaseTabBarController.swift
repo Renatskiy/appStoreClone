@@ -27,8 +27,9 @@ class BaseTabBarController: UITabBarController {
         viewController.navigationItem.title = title
         
         navController.tabBarItem.title = title
-        navController.tabBarItem.image = UIImage(named: imageName)
-        
+        if (imageName.count != 0) {
+            navController.tabBarItem.image = UIImage(named: imageName)
+        }
         return navController
     }
 }
